@@ -1,0 +1,175 @@
+<div class="container rounded text-black h-90">
+  <button
+    type="button"
+    class="btn-close position-absolute top-0 end-0 m-3"
+    aria-label="Close"
+    (click)="popUpRef.close()"
+  ></button>
+  <div class="row justify-content-center">
+    <div class="col-md-3 border-end border-black">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        <img
+          class="rounded-circle mt-5"
+          width="150"
+          height="150"
+          [src]="fileChange ? photoshow : '../../../assets/user_empty.jpg'"
+        />
+        <span></span>
+        <input
+          class="form-control"
+          type="file"
+          (change)="onFileChange($event)"
+          style="margin-top: 10px"
+        />
+      </div>
+      <app-loading *ngIf="isLoading" class="loading-spinner"></app-loading>
+    </div>
+    <div class="col-md-8">
+      <div class="py-4">
+        <h4 class="text-center">User data</h4>
+        <form [formGroup]="forma" (ngSubmit)="saveUser(forma.value)">
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" formControlName="ime" />
+              <small
+                class="text-danger"
+                *ngIf="forma.get('ime')?.invalid && forma.get('ime')?.touched"
+              >
+                Field "Name" is required and can only contain letters and
+                spaces.
+              </small>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Surname</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="prezime"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('prezime')?.invalid && forma.get('prezime')?.touched
+                "
+              >
+                Field "Surname" is required and can only contain letters and
+                spaces.
+              </small>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <label class="form-label">Phone nummber</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="brojTelefona"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('brojTelefona')?.invalid &&
+                  forma.get('brojTelefona')?.touched
+                "
+              >
+                Field "Phone nummber" is required and can only contain numbers.
+              </small>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Email</label>
+              <input type="text" class="form-control" formControlName="email" />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('email')?.invalid && forma.get('email')?.touched
+                "
+              >
+                Field "Email" is required.
+              </small>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="lozinka"
+                [ngClass]="{
+                  weak: isWeakPassword(),
+                  medium: isMediumPassword(),
+                  strong: isStrongPassword()
+                }"
+                (ngModelChange)="
+                  checkPasswordStrength(forma.controls['lozinka'])
+                "
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('lozinka')?.touched && forma.get('lozinka')?.invalid
+                "
+              >
+                Field "Password" is required.
+              </small>
+              <div
+                *ngIf="
+                  passwordStrength !== '' && forma.get('lozinka')?.value !== ''
+                "
+                [ngClass]="{
+                  weak: isWeakPassword(),
+                  medium: isMediumPassword(),
+                  strong: isStrongPassword()
+                }"
+              >
+                Password Strength: <span>{{ passwordStrength }}</span>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Role</label>
+              <select
+                name="bilosta"
+                id=""
+                class="form-select"
+                formControlName="roleId"
+              >
+                <option [value]="role.GuestUser">Guest user/option></option>
+                <option [value]="role.Admin">Admin</option>
+                <option [value]="role.Employee">Employee</option>
+              </select>
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('roleId')?.touched && forma.get('roleId')?.invalid
+                "
+              >
+                Choose a role for user.
+              </small>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Birthdate</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="datumRodjenja"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('datumRodjenja')?.touched &&
+                  forma.get('datumRodjenja')?.invalid
+                "
+              >
+                Please enter birthdate!
+              </small>
+            </div>
+            <div class="col-md-12">
+              <button class="btn btn-primary mt-3" type="submit">
+                <i class="bi bi-check-circle"></i> Save
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

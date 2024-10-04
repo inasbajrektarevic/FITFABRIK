@@ -1,0 +1,54 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex; /* Flexbox layout to align sidebar and content */
+  min-height: 100vh; /* Full viewport height */
+  background-color: #333; /* Dark background for entire container */
+}
+
+.sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #1a1a1a; /* Dark sidebar background */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+.priceContent {
+  flex-grow: 1; /* Fills the remaining horizontal space */
+  margin-left: 20%; /* Exactly the width of the sidebar */
+  padding: 20px;
+  background-color: #2c2c2c; /* Dark background for content */
+  color: #ffffff; /* Light text for readability */
+  overflow-y: auto; /* Scroll for overflow content */
+  height: 100%;
+}
+
+/* Ensuring content doesn't overflow or underflow the height of the viewport */
+.priceContent {
+  min-height: calc(100vh - 40px); /* Adjust based on padding and actual height needs */
+}
+
+.bmi-advice-section {
+  max-width: 100%; /* Prevents horizontal overflow */
+  padding-right: 20px; /* Padding to prevent text from sticking to the edge */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack sidebar and content on smaller screens */
+  }
+
+  .sidebar, .priceContent {
+    width: 100%; /* Full width for small screens */
+    margin-left: 0; /* Remove margin for sidebar */
+  }
+  .h1.mb-4 text-white
+  {
+    color: green;
+  }
+}

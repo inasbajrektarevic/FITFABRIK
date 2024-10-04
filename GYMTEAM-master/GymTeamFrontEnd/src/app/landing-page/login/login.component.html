@@ -1,0 +1,45 @@
+<section class="login-container">
+  <div class="login-form">
+    <div class="text-center">
+      <img src="assets/pocetna.jpg" style="width: 150px" alt="logo" />
+      <h4 class="mt-1 mb-5 pb-1" style="color:#198754">FIT FABRIK</h4>
+    </div>
+
+    <form [formGroup]="forma" (ngSubmit)="loginUser(forma.value)">
+      <p>Please login to your account</p>
+
+      <div class="form-outline mb-4">
+        <input
+          type="email"
+          id="form2Example11"
+          class="form-control"
+          placeholder="Email"
+          formControlName="email"
+        />
+        <label class="form-label" for="form2Example11">Email</label>
+      </div>
+
+      <div class="form-outline mb-1">
+        <input
+          type="password"
+          id="form2Example22"
+          class="form-control"
+          placeholder="Password"
+          formControlName="lozinka"
+        />
+        <label class="form-label" for="form2Example22">Password</label>
+      </div>
+
+      <a href="#" class="text-white">Forgot your password?</a>
+      <div class="text-center pt-1 mb-5 pb-1">
+        <button
+          class="btn btn-primary btn-block"
+          type="submit"
+          style="background-color: #ff0000; color: white; border: none"
+        >
+          Log in
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

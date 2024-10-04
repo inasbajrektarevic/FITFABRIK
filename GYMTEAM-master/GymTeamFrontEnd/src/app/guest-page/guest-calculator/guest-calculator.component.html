@@ -1,0 +1,24 @@
+<div id="content" class="p-4 p-md-5" style="margin-left: 16%">
+  <div class="card" style="width: 400px; margin: auto; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h3 class="text-center">BMI Calculator</h3>
+    <div>
+      <label>Gender:</label><br>
+      <input type="radio" id="male" name="gender" [(ngModel)]="gender" value="Male">
+      <label for="male">Man</label><br>
+      <input type="radio" id="female" name="gender" [(ngModel)]="gender" value="Female">
+      <label for="female">Woman</label><br><br>
+    </div>
+    <div>
+      <label for="weight">Weight (kg):</label>
+      <input id="weight" type="number" [(ngModel)]="weight" class="form-control">
+    </div>
+    <div>
+      <label for="height">Height (cm):</label>
+      <input id="height" type="number" [(ngModel)]="height" class="form-control">
+    </div>
+    <button (click)="calculateBMI()" class="btn btn-primary btn-block mt-3">Calculate BMI</button>
+    <div *ngIf="bmiMessage" class="alert alert-info mt-3">
+      {{ bmiMessage }}
+    </div>
+  </div>
+</div>
