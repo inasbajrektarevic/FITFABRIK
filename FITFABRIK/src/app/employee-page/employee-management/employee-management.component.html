@@ -1,0 +1,71 @@
+<div id="content" class="p-4 p-md-5" style="margin-left: 16%">
+  <h2 class="mb-4" style="margin-left: 45%; width: fit-content; color: green;">
+    {{ 'employee_management.about_gym' | translate }}
+  </h2>
+
+  <div class="news">
+    <div
+      class="newsBox"
+      (click)="readFullContent(o.id)"
+      *ngFor="let o of obavijesti"
+      [style.background-image]="'url(' + getSliku(o.id) + ')'"
+    >
+      <h4 class="news-type">
+        {{ o.tip }}
+      </h4>
+      <p class="news-content">
+        {{ o.sadrzaj.substr(0, 190) }}...
+      </p>
+    </div>
+  </div>
+
+  <!-- Procitaj vise -->
+  <div
+    class="modal fade show"
+    id="showNews"
+    tabindex="-1"
+    aria-modal="true"
+    *ngIf="!!showMore"
+    style="display: block"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #1d1919">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-white" id="exampleModalLabel">
+            {{ picked.naslov }}
+          </h5>
+
+          <button
+            type="button"
+            class="btn-close bg-white"
+            aria-label="Close"
+            (click)="show()"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <h6 class="text-white">
+            {{ 'employee_management.date_label' | translate }}: {{ picked.datumObjave | date : "dd/MM/yyyy" }}
+          </h6>
+          <img
+            src="{{ getSliku(picked.id) }}"
+            class="img-fluid mb-3"
+            alt="Article Image"
+            style="width: 100%"
+          />
+          <p class="text-white" style="overflow: hidden; text-overflow: ellipsis">
+            {{ picked.sadrzaj }}
+          </p>
+          <div class="modal-footer border-0">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deletePicked(picked.id)"
+            >
+              {{ 'employee_management.delete_button' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

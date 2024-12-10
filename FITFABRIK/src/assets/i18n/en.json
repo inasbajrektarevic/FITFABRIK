@@ -1,0 +1,151 @@
+{
+  "admin_info_component": {
+    "profile_info_title": "Profile Info",
+    "name_label": "Name",
+    "surname_label": "Surname",
+    "phone_number_label": "Phone number",
+    "email_label": "Email",
+    "role_label": "Role",
+    "password_label": "Password",
+    "save_button": "Save",
+    "edit_button": "Edit Profile",
+    "eye_icon_tooltip": "Show/Hide Password",
+    "admin_role": "Admin"
+  },
+  "bmi_advice": {
+    "bmi_advice_title": "BMI Advice for Our Customers",
+    "personalized_bmi_advice": "Personalized BMI Advice",
+    "underweight": "Underweight (BMI < 18.5)",
+    "underweight_advice": "It's important to consult with a healthcare provider to determine any underlying causes of being underweight. Consider a balanced diet rich in calories, focusing on whole grains, protein-rich foods, and healthy fats. Regular strength training exercises can help build muscle mass.",
+    "normal_weight": "Normal weight (BMI 18.5 - 24.9)",
+    "normal_weight_advice": "You’re in a healthy weight range. Maintain your weight by eating a balanced diet and staying physically active. Regular cardio and strength training are recommended to keep your body strong and healthy.",
+    "overweight": "Overweight (BMI 25 - 29.9)",
+    "overweight_advice": "Consider adopting a healthier diet that focuses on nutrient-dense foods, portion control, and regular exercise. Incorporating both cardio and strength training into your routine will help you manage your weight effectively.",
+    "obese": "Obese (BMI 30 or higher)",
+    "obese_advice": "It’s important to work closely with a healthcare provider to create a safe and effective weight loss plan. A combination of diet changes, increased physical activity, and behavioral changes is often recommended. Focus on reducing calorie intake while increasing daily physical activity."
+  },
+  "admin_location_component": {
+    "bmi_calculator_title": "BMI Calculator",
+    "gender_label": "Gender:",
+    "male_label": "Man",
+    "female_label": "Woman",
+    "weight_label": "Weight (kg):",
+    "height_label": "Height (cm):",
+    "calculate_bmi_button": "Calculate BMI",
+    "bmi_result": "Your BMI is: ",
+    "bmi_message_underweight": "You are underweight.",
+    "bmi_message_normal_weight": "You are in a healthy weight range .",
+    "bmi_message_overweight": "You are overweight.",
+    "bmi_message_obese": "You are obese."
+  }
+,
+  "admin_home_component": {
+    "new_article_button": "New article",
+    "about_gym_title": "About GYM",
+    "article_title_label": "Title",
+    "article_type_label": "Type",
+    "article_content_label": "Content",
+    "article_photo_label": "Photo",
+    "title_required": "Title is required!",
+    "type_required": "Choose the type!",
+    "content_required": "Please enter content!",
+    "photo_required": "Choose article photo!",
+    "save_button": "Save",
+    "close_button": "Close",
+    "delete_button": "Delete",
+    "article_modal_title": "New article",
+    "loading": "Loading...",
+    "show_more_button": "Show more",
+    "article_date_label": "Date: ",
+    "article_image_alt": "Article Image",
+    "article_deleted_message": "The article has been deleted.",
+    "article_delete_confirmation": "Are you sure you want to delete this article?"
+  },
+  "google-map": {
+    "register_new_location_button": "Register new location",
+    "location_name_label": "Object name",
+    "location_name_required": "Name is required",
+    "photo_label": "Photo",
+    "map_instructions": "Click on the map to set the cursor",
+    "new_location_title": "New location",
+    "delete_button": "Delete",
+    "close_button": "Close",
+    "save_button": "Save"
+  }
+, "admin-employee": {
+  "add_new_user_button": "Add new user",
+  "search_placeholder": "Search...",
+  "previous_button": "Previous",
+  "next_button": "Next",
+  "page_button": "Page",
+  "employee_location": "Location"
+},"employee-data": {
+  "close_button": "Close",
+  "user_data_title": "User data",
+  "name_label": "Name",
+  "surname_label": "Surname",
+  "phone_number_label": "Phone number",
+  "email_label": "Email",
+  "role_label": "Role"
+}
+,
+  "add-user": {
+    "user_data": "User data",
+    "name": "Name",
+    "surname": "Surname",
+    "phone_number": "Phone number",
+    "email": "Email",
+    "password": "Password",
+    "role": "Role",
+    "birthdate": "Birthdate",
+    "save": "Save",
+    "field_required": "Field \"{field}\" is required.",
+    "field_invalid": "Field \"{field}\" is invalid.",
+    "password_strength": "Password Strength: {strength}",
+    "choose_role": "Choose a role for user",
+    "guest_user": "Guest user",
+    "admin": "Admin",
+    "employee": "Employee",
+    "file_upload": "Upload Profile Picture"
+  },
+  "price-list": {
+    "price_list_title": "Price List",
+    "edit_price_button": "Edit price",
+    "plan_name": "Plan name",
+    "details": "Details",
+    "price": "Price",
+    "currency": "KM",
+    "save_button": "Save",
+    "cancel_button": "Cancel"
+  },
+  "product_list": {
+    "product_list_title": "PRODUCTS",
+    "category": "CATEGORY",
+    "weight": "WEIGHT",
+    "country_of_origin": "COUNTRY OF ORIGIN",
+    "price": "PRICE",
+    "edit_button": "Edit",
+    "delete_button": "Delete",
+    "edit_product_title": "Edit Product",
+    "name": "Name",
+    "category_label": "Category",
+    "price_label": "Price",
+    "country_label": "Country",
+    "weight_label": "Weight",
+    "cancel_button": "Cancel",
+    "save_button": "Save"
+  },
+  "employee_management": {
+    "about_gym": "About GYM",
+    "delete_button": "Delete",
+    "date_label": "Date"
+  },
+  "login": {
+    "title": "FIT FABRIK",
+    "subtitle": "Please login to your account",
+    "email_label": "Email",
+    "password_label": "Password",
+    "forgot_password": "Forgot your password?",
+    "login_button": "Log in"
+  }
+}

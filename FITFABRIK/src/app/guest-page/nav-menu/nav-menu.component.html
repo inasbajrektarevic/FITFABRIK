@@ -1,0 +1,54 @@
+<nav id="sidebar" *ngIf="korisnik != null" [ngClass]="{ expanded: isSidebarExpanded }">
+  <div class="navi p-4 pt-5 text-center">
+    <img
+      class="logo rounded-circle mb-5"
+      [src]="slika ? slika : getSliku(korisnik.id)"
+      alt="Profile Image"
+      style="width: 120px; height: 120px; object-fit: cover;"
+    />
+    <h2 class="profile-name">{{ korisnik.ime }} {{ korisnik.prezime }}</h2>
+    <ul class="list-unstyled components mb-5">
+      <li>
+        <a routerLink="homepage">
+          <i class="bi bi-house-exclamation"></i> Home
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="guest-calculator">
+          <i class="bi bi-calculator"></i> BMI Calculator
+        </a>
+      </li>
+      <li>
+        <a routerLink="google-mapare"><i class="bi bi-geo-alt"></i> Locations</a>
+      </li>
+      <li>
+
+      <li>
+      <li>
+        <a routerLink="guest-advice">
+          <i class="bi bi-heart-pulse"></i> BMI Advice
+        </a>
+      </li>
+      <li>
+        <a routerLink="cijene-list"
+        ><i class="bi bi-cash-coin"></i> Price list
+        </a>
+      <li>
+        <a routerLink="prod-list">
+          <i class="bi bi-box"></i> Products
+        </a>
+      </li>
+
+      <li>
+        <a (click)="logout()" style="cursor: pointer">
+          <i class="bi bi-box-arrow-left"></i> Sign out
+        </a>
+      </li>
+
+
+
+
+    </ul>
+  </div>
+</nav>

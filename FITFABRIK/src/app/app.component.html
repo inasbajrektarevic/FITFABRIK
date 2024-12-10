@@ -1,0 +1,14 @@
+<div style="min-height: 100vh">
+  <!-- Dugmadi za promenu jezika u desnom gornjem kutu -->
+  <div class="language-buttons">
+    <button (click)="changeLanguage('en')" class="btn btn-flag" aria-label="English">
+      <img src="assets/flags/english-flag.png" alt="English" width="30" height="20">
+    </button>
+    <button (click)="changeLanguage('hr')" class="btn btn-flag" aria-label="Hrvatski">
+      <img src="assets/flags/croatia-flag.png" alt="Hrvatski" width="30" height="20">
+    </button>
+  </div>
+
+  <!-- Router-outlet za navigaciju -->
+  <router-outlet></router-outlet>
+</div>

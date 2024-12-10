@@ -1,0 +1,78 @@
+<div class="employeeContent" style="padding-top: 3%">
+
+
+
+  <input
+    class="form-control"
+    type="text"
+    placeholder="{{ 'admin-employee.search_placeholder' | translate }}"
+    [(ngModel)]="ime_prezime"
+    (ngModelChange)="Filtriraj()"
+  />
+  <div
+    class="cards"
+    style="margin-left: 25%; background-color: #2c2c2c;"
+  >
+    <div class="employee" *ngFor="let radnik of employee">
+      <div class="box">
+        <img
+          src="{{ getSliku(radnik.id) }}"
+          alt=""
+          width="250px"
+          height="250px"
+          style="border-top-right-radius: 10px; border-top-left-radius: 10px"
+        />
+        <h5 style="margin-top: 5%; text-align: center">
+          {{ radnik.ime }} {{ radnik.prezime }}
+        </h5>
+        <p>{{ radnik.lokacijaid }}</p>
+        <div class="buttons" style="width: 100%">
+          <a
+            class="bi-info-lg"
+            (click)="openForm(radnik)"
+            type="button"
+            style="
+              background-color: black;
+              color: white;
+              padding: 8px 16px;
+              margin: 10%;
+              border-radius: 10%;
+            "
+          ></a>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pagination buttons mb-1 mt-1">
+    <button
+      class="btn btn-sm btn-primary"
+      (click)="previousPage()"
+      style="background-color: green"
+    >
+      {{ 'admin-employee.previous_button' | translate }}
+    </button>
+    <button
+      class="btn btn-sm btn-primary"
+      (click)="page = 1"
+      style="background-color: #198754"
+    >
+      {{ page }}
+    </button>
+    <button
+      class="btn btn-sm btn-primary"
+      (click)="page = numberOfPages"
+      style="background-color: #198754"
+    >
+      {{ numberOfPages }}
+    </button>
+    <button
+      class="btn btn-sm btn-primary"
+      (click)="nextPage()"
+      style="background-color: #198754"
+    >
+      {{ 'admin-employee.next_button' | translate }}
+    </button>
+  </div>
+</div>

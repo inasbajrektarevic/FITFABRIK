@@ -1,0 +1,84 @@
+.bmi-calculator {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #7a7a7a !important; /* Gray background color with !important */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: normal;
+  background-color: #7a7a7a; /* Gray background color */
+  color: gray;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Ensure full height */
+  width: 100vw; /* Ensure full width */
+  box-sizing: border-box;
+}
+.wrapper {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.bmi-calculator .form-group {
+  margin-bottom: 15px;
+}
+
+.bmi-calculator .form-group label {
+  font-weight: bold;
+  color: white; /* Change label text color to white for better contrast */
+}
+
+.bmi-calculator .form-group input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.bmi-calculator button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bmi-calculator button:hover {
+  background-color: #0056b3;
+}
+
+.bmi-calculator h3 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: white; /* Change header text color to white for better contrast */
+}
+
+.bmi-calculator p {
+  font-size: 18px;
+  color: #666;
+}
+#content {
+  flex-grow: 1;
+  padding: 0;
+  height: 100vh; /* Ensure full height */
+  background-color:#2c2c2c; /* Gray background color */
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box; /* Include padding in width/height calculation */
+}
+.bmi-calculator .form-group .gender-group label {
+  color: white; /* Change gender label color to white */
+}

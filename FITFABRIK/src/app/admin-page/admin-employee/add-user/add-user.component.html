@@ -1,0 +1,174 @@
+<div class="container rounded text-black h-90">
+  <button
+    type="button"
+    class="btn-close position-absolute top-0 end-0 m-3"
+    aria-label="Close"
+    (click)="popUpRef.close()"
+  ></button>
+  <div class="row justify-content-center">
+    <div class="col-md-3 border-end border-black">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        <img
+          class="rounded-circle mt-5"
+          width="150"
+          height="150"
+          [src]="fileChange ? photoshow : '../../../assets/user_empty.jpg'"
+        />
+        <span></span>
+        <input
+          class="form-control"
+          type="file"
+          (change)="onFileChange($event)"
+          style="margin-top: 10px"
+          [attr.title]="'add-user.file_upload' | translate"
+        />
+      </div>
+      <app-loading *ngIf="isLoading" class="loading-spinner"></app-loading>
+    </div>
+    <div class="col-md-8">
+      <div class="py-4">
+        <h4 class="text-center">{{ 'add-user.user_data' | translate }}</h4>
+        <form [formGroup]="forma" (ngSubmit)="saveUser(forma.value)">
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <label class="form-label">{{ 'add-user.name' | translate }}</label>
+              <input type="text" class="form-control" formControlName="ime" />
+              <small
+                class="text-danger"
+                *ngIf="forma.get('ime')?.invalid && forma.get('ime')?.touched"
+              >
+                {{ 'add-user.field_required' | translate: { field: 'Name' } }}
+              </small>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">{{ 'add-user.surname' | translate }}</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="prezime"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('prezime')?.invalid && forma.get('prezime')?.touched
+                "
+              >
+                {{ 'add-user.field_required' | translate: { field: 'Surname' } }}
+              </small>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <label class="form-label">{{ 'add-user.phone_number' | translate }}</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="brojTelefona"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('brojTelefona')?.invalid &&
+                  forma.get('brojTelefona')?.touched
+                "
+              >
+                {{ 'add-user.field_required' | translate: { field: 'Phone number' } }}
+              </small>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">{{ 'add-user.email' | translate }}</label>
+              <input type="text" class="form-control" formControlName="email" />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('email')?.invalid && forma.get('email')?.touched
+                "
+              >
+                {{ 'add-user.field_required' | translate: { field: 'Email' } }}
+              </small>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">{{ 'add-user.password' | translate }}</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="lozinka"
+                [ngClass]="{
+                  weak: isWeakPassword(),
+                  medium: isMediumPassword(),
+                  strong: isStrongPassword()
+                }"
+                (ngModelChange)="
+                  checkPasswordStrength(forma.controls['lozinka'])
+                "
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('lozinka')?.touched && forma.get('lozinka')?.invalid
+                "
+              >
+                {{ 'add-user.field_required' | translate: { field: 'Password' } }}
+              </small>
+              <div
+                *ngIf="
+                  passwordStrength !== '' && forma.get('lozinka')?.value !== ''
+                "
+                [ngClass]="{
+                  weak: isWeakPassword(),
+                  medium: isMediumPassword(),
+                  strong: isStrongPassword()
+                }"
+              >
+                {{ 'add-user.password_strength' | translate: { strength: passwordStrength } }}
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">{{ 'add-user.role' | translate }}</label>
+              <select
+                name="bilosta"
+                id=""
+                class="form-select"
+                formControlName="roleId"
+              >
+                <option [value]="role.GuestUser">{{ 'add-user.guest_user' | translate }}</option>
+                <option [value]="role.Admin">{{ 'add-user.admin' | translate }}</option>
+                <option [value]="role.Employee">{{ 'add-user.employee' | translate }}</option>
+              </select>
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('roleId')?.touched && forma.get('roleId')?.invalid
+                "
+              >
+                {{ 'add-user.field_invalid' | translate: { field: 'Role' } }}
+              </small>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">{{ 'add-user.birthdate' | translate }}</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="datumRodjenja"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  forma.get('datumRodjenja')?.touched &&
+                  forma.get('datumRodjenja')?.invalid
+                "
+              >
+                {{ 'add-user.field_required' | translate: { field: 'Birthdate' } }}
+              </small>
+            </div>
+            <div class="col-md-12">
+              <button class="btn btn-primary mt-3" type="submit">
+                <i class="bi bi-check-circle"></i> {{ 'add-user.save' | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

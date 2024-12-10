@@ -1,0 +1,26 @@
+<div id="content" class="p-4 p-md-5" style="margin-left: 16%">
+  <div class="card" style="width: 400px; margin: auto; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h3 class="text-center">{{ 'admin_location_component.bmi_calculator_title' | translate }}</h3>
+    <div>
+      <label>{{ 'admin_location_component.gender_label' | translate }}:</label><br>
+      <input type="radio" id="male" name="gender" [(ngModel)]="gender" value="Male">
+      <label for="male">{{ 'admin_location_component.male_label' | translate }}</label><br>
+      <input type="radio" id="female" name="gender" [(ngModel)]="gender" value="Female">
+      <label for="female">{{ 'admin_location_component.female_label' | translate }}</label><br><br>
+    </div>
+    <div>
+      <label for="weight">{{ 'admin_location_component.weight_label' | translate }}</label>
+      <input id="weight" type="number" [(ngModel)]="weight" class="form-control">
+    </div>
+    <div>
+      <label for="height">{{ 'admin_location_component.height_label' | translate }}</label>
+      <input id="height" type="number" [(ngModel)]="height" class="form-control">
+    </div>
+    <button (click)="calculateBMI()" class="btn btn-primary btn-block mt-3">
+      {{ 'admin_location_component.calculate_bmi_button' | translate }}
+    </button>
+    <div *ngIf="bmiMessage" class="alert alert-info mt-3">
+      {{ bmiMessage| translate}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<section class="login-container">
+  <div class="login-form">
+    <div class="text-center">
+      <img src="assets/pocetna.jpg" style="width: 150px" alt="logo" />
+      <h4 class="mt-1 mb-5 pb-1" style="color:#198754">
+        {{ 'login.title' | translate }}
+      </h4>
+    </div>
+
+    <form [formGroup]="forma" (ngSubmit)="loginUser(forma.value)">
+      <p>{{ 'login.subtitle' | translate }}</p>
+
+      <div class="form-outline mb-4">
+        <input
+          type="email"
+          id="form2Example11"
+          class="form-control"
+          placeholder="{{ 'login.email_label' | translate }}"
+          formControlName="email"
+        />
+        <label class="form-label" for="form2Example11">
+          {{ 'login.email_label' | translate }}
+        </label>
+      </div>
+
+      <div class="form-outline mb-1">
+        <input
+          type="password"
+          id="form2Example22"
+          class="form-control"
+          placeholder="{{ 'login.password_label' | translate }}"
+          formControlName="lozinka"
+        />
+        <label class="form-label" for="form2Example22">
+          {{ 'login.password_label' | translate }}
+        </label>
+      </div>
+
+      <a href="#" class="text-white">
+        {{ 'login.forgot_password' | translate }}
+      </a>
+      <div class="text-center pt-1 mb-5 pb-1">
+        <button
+          class="btn btn-primary btn-block"
+          type="submit"
+          style="background-color: #ff0000; color: white; border: none"
+        >
+          {{ 'login.login_button' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
